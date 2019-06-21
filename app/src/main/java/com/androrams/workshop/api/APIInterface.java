@@ -11,7 +11,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface APIInterface {
-    String BASE_URL = "https://hiringworkshop.herokuapp.com/api/workshop/";
 
     @GET("video")
     Call<VideoDetails> getVideoDetails();

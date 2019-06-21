@@ -36,12 +36,16 @@
 
     </RelativeLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color" />
+
     <RelativeLayout
         android:id="@+id/channelBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dp_16"
-        android:layout_marginRight="@dimen/dp_16"
+        android:layout_margin="8dp"
         android:orientation="vertical">
 
         <TextView
@@ -59,14 +63,19 @@
             android:layout_below="@id/channelName"
             android:text="subscriberes" />
 
-        <Button
+        <TextView
             android:id="@+id/subscribeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:text="Subscribe" />
     </RelativeLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,8 +96,7 @@
         android:id="@+id/desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_margin="@dimen/dp_16"
         android:text="Description" />
 
 
@@ -114,7 +122,8 @@
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/commentBox" />
+            android:layout_below="@id/commentBox"
+            android:layout_margin="@dimen/dp_16"/>
 
 
     </RelativeLayout>
