@@ -1,5 +1,6 @@
-package com.androrams.workshop.Repository;
+package com.androrams.workshop.Repository.video;
 
+import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
@@ -12,27 +13,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VideoDetailsRepository {
-    private static VideoDetailsRepository newsRepository;
+public class VideoDetailsRemoteRepository extends VideoDetailsRepository {
     private APIInterface apiInterface;
-
-    public static VideoDetailsRepository getInstance() {
-        if (newsRepository == null) {
-            newsRepository = new VideoDetailsRepository();
-        }
-        return newsRepository;
-    }
+    private static MutableLiveData<VideoDetails> videoDetails;
 
 
-    private VideoDetailsRepository() {
+    public VideoDetailsRemoteRepository() {
         apiInterface = RetrofitService.cteateService(APIInterface.class);
+        videoDetails = new MutableLiveData<>();
     }
-
 
     public MutableLiveData<VideoDetails> getVideoDetails() {
 
         Call<VideoDetails> call = apiInterface.getVideoDetails();
-        final MutableLiveData<VideoDetails> videoDetails = new MutableLiveData<>();
 
         call.enqueue(new Callback<VideoDetails>() {
             @Override

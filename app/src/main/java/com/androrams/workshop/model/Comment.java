@@ -6,6 +6,9 @@ public class Comment {
     String user;
     long timeStamp;
 
+    User userDetails;
+    String updateTime;
+
     public String getId() {
         return id;
     }

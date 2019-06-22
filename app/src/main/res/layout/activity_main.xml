@@ -60,8 +60,7 @@
             android:id="@+id/subscribers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/channelName"
-            android:text="subscriberes" />
+            android:layout_below="@id/channelName" />
 
         <TextView
             android:id="@+id/subscribeButton"
@@ -69,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:text="Subscribe" />
+            android:text="@string/subscribe"
+            android:textColor="@color/color_red" />
     </RelativeLayout>
 
     <View
@@ -99,34 +99,7 @@
         android:layout_margin="@dimen/dp_16"
         android:text="Description" />
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/dp_16">
-
-        <EditText
-            android:id="@+id/commentBox"
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
-
-        <Button
-            android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="Send" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/commentBox"
-            android:layout_margin="@dimen/dp_16"/>
-
-
-    </RelativeLayout>
+    <include layout="@layout/comments_section"/>
 
 
 </LinearLayout>

@@ -1,8 +1,22 @@
 package com.androrams.workshop.model;
 
+
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
+@Entity
 public class VideoDetails {
+
+    @NonNull
+    @PrimaryKey
+    private String id;
+
 
     @SerializedName("image")
     private String videoUrl;
@@ -83,5 +97,13 @@ public class VideoDetails {
 
     public void setSubscribers(String subscribers) {
         this.subscribers = subscribers;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
